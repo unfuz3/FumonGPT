@@ -1,4 +1,4 @@
-# FUumonGPT
+# FumonGPT
 ## El bot perfecto para pedirle paridas al ChatGPT en tu grupo de discord favorito
 ---
 ### Que hace?
