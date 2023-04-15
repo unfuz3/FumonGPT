@@ -28,7 +28,7 @@ def getCompletion(prompt: str) -> str:
 def getDANCompletion(prompt: str) -> str:
 	completion = openai.ChatCompletion.create(
 		model="gpt-3.5-turbo",
-		message=[
+		messages=[
 			{"role":"user","content":dan["user"]},
 			{"role":"assistant","content":dan["assistant"]},
 			{"role":"user","content":prompt}
