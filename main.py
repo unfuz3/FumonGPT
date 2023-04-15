@@ -3,9 +3,13 @@ from dotenv import load_dotenv
 import openai
 import discord
 from discord.ext import commands
+import json
 
 #Setup
 load_dotenv()
+
+with open("danmode.json","r",encoding="utf-8") as file:
+	dan = json.loads(file.read)
 
 openai.api_key = os.getenv("APIKEY")
 
@@ -20,6 +24,18 @@ def getCompletion(prompt: str) -> str:
 		]
 	)
 	return completion.choices[0].message.content
+
+def getDANCompletion(prompt: str) -> str:
+	completion = openai.ChatCompletion.create(
+		model="gpt-3.5-turbo",
+		message=[
+			{"role":"user","content":dan["user"]},
+			{"role":"assistant","content":dan["assistant"]},
+			{"role":"user","content":prompt}
+		]
+	)
+	return completion.choice[0].message.content
+
 
 # Commands
 @client.command(name="send")
