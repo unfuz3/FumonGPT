@@ -45,7 +45,15 @@ async def send_func(ctx, prompt: str = commands.parameter(description="El prompt
 
 send_func.brief = "Crea una respuesta de ChatGPT"
 send_func.help = "Crea y devulve una respuesta de ChatGPT con una prompt dado entre comillas"
-	
+
+@client.command(name="dan")
+async def dan_func(ctx, prompt: str = commands.parameter(description="El prompt para dar a ChatGPT. Escribir entre comillas")):
+	resp = getDANCompletion(prompt)
+	await ctx.send(resp)
+
+dan_func.brief = "Crea una respuesta de ChatGPT en modo DAN"
+dan_func.help = "Crea y devulve una respuesta de ChatGPT con una prompt dado entre comillas con el prompt de activacion del modo DAN preescrito"
+
 
 # Events
 @client.event
