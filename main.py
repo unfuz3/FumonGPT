@@ -8,8 +8,8 @@ import json
 #Setup
 load_dotenv()
 
-with open("danmode.json","r",encoding="utf-8") as file:
-	dan = json.loads(file.read)
+with open(os.path.join(os.getcwd(),"danmode.json"),"r",encoding="utf-8") as file:
+	dan = json.loads(file.read())
 
 openai.api_key = os.getenv("APIKEY")
 
