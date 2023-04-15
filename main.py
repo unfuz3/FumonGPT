@@ -34,7 +34,7 @@ def getDANCompletion(prompt: str) -> str:
 			{"role":"user","content":prompt}
 		]
 	)
-	return completion.choice[0].message.content
+	return completion.choices[0].message.content
 
 
 # Commands
