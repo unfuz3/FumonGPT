@@ -1,4 +1,9 @@
+# Enviroment files and virtual envs
 .venv
 .env
-TODO.txt
-testing.py
+
+# The log folder (created when running code)
+log
+
+# Personal testing files
+testing
